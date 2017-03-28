@@ -27,9 +27,9 @@
 }
 
 .diy-img p {
-	position: absolute;
-	left: 1rem;
-	top: 1rem;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
 }
 
 .diy-img img {
@@ -41,7 +41,6 @@
 .diy-select {
     width: 100%;
     height: 35%;
-    // border: 1px solid blue;
 }
 
 .diy-select-top {
@@ -52,7 +51,7 @@
 }
 
 .diy-select-top a {
-    width: 5.2rem;
+    width: 4rem;
     height: 2rem;
     margin: 0 auto;
     line-height: 1.9rem;
@@ -70,7 +69,7 @@
 .diy-select-body {
     text-align: center;
     height: 8rem;
-    font-size: .8rem;
+    font-size: .7rem;
 }
 
 .diy-select-body ul {
@@ -95,7 +94,7 @@
 }
 
 .diy-select-body p {
-    margin-top: .5rem;
+    margin-top: .7rem;
 }
 
 .diy-select-body ul li .t-color-button {
@@ -110,10 +109,70 @@
 
 
 /* size tap */
+
 .diy-select-body-size {
-	font-size: .6rem;
+    font-size: .6rem;
 }
 
 .diy-select-body-size-title p {
-	color: #51abc8;
+    color: #51abc8;
+}
+
+
+/* diy2 */
+
+.diy-select-body {
+    position: relative;
+}
+
+.diy-select-body-left {
+    width: 4rem;
+    height: 8rem;
+    background-color: #f4f5f6;
+}
+
+.diy-select-body-left-youimg {
+    height: 2rem;
+}
+
+.diy-select-body-left img {
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+}
+
+.diy-select-body-left-imgdiv {
+    height: 6rem;
+    line-height: 6rem;
+}
+
+.diy-select-body-right {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+}
+
+.diy-select-body-right-body {
+    height: 6rem;
+    line-height: 6rem;
+}
+
+.diy-select-body-right-bottom {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-top: .5rem;
+    text-align: left;
+    background-color: #f4f5f6;
+}
+
+.diy-select-body-right-bottom li {
+    width: 2.5rem;
+    text-align: center;
+}
+
+.diy-select-body-right-bottom li.active {
+    border-bottom-left-radius: .6rem;
+    border-bottom-right-radius: .6rem;
+    background-color: #fff;
+    /*margin-right: 1rem;*/
 }
