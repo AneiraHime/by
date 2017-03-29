@@ -13,7 +13,7 @@
 <body>
     <div class="diy-img">
         <p>{{submitData.size}}</p>
-        <img :src="show.imgSrc" alt="">
+        <img :src="submitData.imgSrc" alt="">
     </div>
     <div class="diy-select">
         <div class="diy-select-top">
@@ -28,7 +28,7 @@
                     <p>胸围</p>
                     <p>衣长</p>
                 </li>
-                <li v-for="item in sizes" @click="showThis(item)">
+                <li v-for="item in sizeList" @click="showThis(item)">
                     <p>{{item.text}}</p>
                     <p>{{item.model}}</p>
                     <p>{{item.shoulderWidth}}</p>
@@ -39,7 +39,7 @@
         </div>
         <div class="diy-select-body" v-show="show.selectBody == 'type'">
             <ul>
-                <li v-for="item in types" @click="showThis(item)">
+                <li v-for="item in typeList" @click="showThis(item)">
                     <img :src="item.imgSrc" alt="">
                     <p>{{ item.text }}</p>
                 </li>
@@ -47,7 +47,7 @@
         </div>
         <div class="diy-select-body" v-show="show.selectBody == 'color'">
             <ul>
-                <li v-for="item in colors" @click="showThis(item)">
+                <li v-for="item in colorList" @click="showThis(item)">
                     <div class="t-color-button" style="background-color: {{item.color}}"></div>
                     <p>{{ item.text }}</p>
                 </li>

@@ -13,32 +13,68 @@
 <body>
     <div class="diy-img">
         <p>{{submitData.size}}</p>
-        <img :src="show.imgSrc" alt="">
+        <img :src="submitData.imgSrc" alt="">
+        <!-- 印花 -->
+        <img class="yinhua" v-show="submitData.yinhua" :src="yinhuaObj[show.yinhuaType][submitData.yinhua.id].imgSrc" alt="">
+        <!-- 袖标 -->
+        <img class="xiubiao" v-show="submitData.xiubiao" :src="xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
+        <!-- 衣标 -->
+        <img class="yibiao" v-show="submitData.yibiao" :src="yibiaoList[submitData.yibiao.id].imgSrc" alt="">
+        <!-- 刺绣 -->
+        <img class="cixiu" v-show="submitData.cixiu" :src="cixiuList[submitData.cixiu.id].imgSrc" alt="">
     </div>
     <div class="diy-select">
         <div class="diy-select-top">
             <a v-for="item in menus" :class="{'active': item.id == show.selectBody}" @click="selectMenu(item)" href="javascript:void(0);">{{item.text}}</a>
         </div>
+        <!-- 印花 -->
         <div class="diy-select-body" v-show="show.selectBody == 'yinhua'">
             <div class="diy-select-body-left">
-                <div class="diy-select-body-left-imgdiv">
+                <div class="diy-select-body-left-imgdiv" @click="addYourImg">
                     <img src="./images/add-btn.png" alt="">
                 </div>
                 <p class="diy-select-body-left-youimg">你的图案</p>
             </div>
             <div class="diy-select-body-right">
                 <ul class="diy-select-body-right-body">
-                    <li v-for="item in yinhuas" @click="showThis(item)">
+                    <li v-for="item in yinhuaObj[show.yinhuaType]" @click="showPic(item, 'yinhua')">
                         <img :src="item.imgSrc" alt="">
                     </li>
                 </ul>
                 <ul class="diy-select-body-right-bottom">
-                    <li class="active">默认</li>
-                    <li>热门</li>
-                    <li>A系列</li>
-                    <li>More</li>
+                    <li :class="show.yinhuaType == 'default' ? 'active' : ''" @click="yinhuaTap('default')">默认</li>
+                    <li :class="show.yinhuaType == 'hot' ? 'active' : ''" @click="yinhuaTap('hot')">热门</li>
+                    <li :class="show.yinhuaType == 'a' ? 'active' : ''" @click="yinhuaTap('a')">A系列</li>
+                    <li :class="show.yinhuaType == 'more' ? 'active' : ''" @click="yinhuaTap('more')">More</li>
                 </ul>
             </div>
+        </div>
+        <!-- 袖标 -->
+        <div class="diy-select-body" v-show="show.selectBody == 'xiubiao'">
+            <ul>
+                <li v-for="item in xiubiaoList" @click="showPic(item, 'xiubiao')">
+                    <img :src="item.imgSrc" alt="">
+                    <p>{{ item.text }}</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 衣标 -->
+        <div class="diy-select-body" v-show="show.selectBody == 'yibiao'">
+            <ul>
+                <li v-for="item in yibiaoList" @click="showPic(item, 'yibiao')">
+                    <img :src="item.imgSrc" alt="">
+                    <p>{{ item.text }}</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 刺绣 -->
+        <div class="diy-select-body" v-show="show.selectBody == 'cixiu'">
+            <ul>
+                <li v-for="item in cixiuList" @click="showPic(item, 'cixiu')">
+                    <img :src="item.imgSrc" alt="">
+                    <p>{{ item.text }}</p>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="footerBloackBtn" @click="submit">

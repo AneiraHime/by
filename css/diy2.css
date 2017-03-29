@@ -67,8 +67,10 @@
 }
 
 .diy-select-body {
-    text-align: center;
     height: 8rem;
+    line-height: 8rem;
+    position: relative;
+    text-align: center;
     font-size: .7rem;
 }
 
@@ -88,13 +90,15 @@
 .diy-select-body img {
     width: 5rem;
     height: 5rem;
-    margin-top: .5rem;
+    /*margin-top: .5rem;*/
     margin-left: .1rem;
     margin-right: .1rem;
+    vertical-align: middle;
 }
 
 .diy-select-body p {
     margin-top: .7rem;
+    line-height: normal;
 }
 
 .diy-select-body ul li .t-color-button {
@@ -121,12 +125,8 @@
 
 /* diy2 */
 
-.diy-select-body {
-    position: relative;
-}
-
 .diy-select-body-left {
-    width: 4rem;
+    width: 25.1%;
     height: 8rem;
     background-color: #f4f5f6;
 }
@@ -147,6 +147,7 @@
 }
 
 .diy-select-body-right {
+    width: 74.9%;
     position: absolute;
     top: 0;
     left: 4rem;
@@ -175,4 +176,37 @@
     border-bottom-right-radius: .6rem;
     background-color: #fff;
     /*margin-right: 1rem;*/
+}
+
+
+.diy-img img.yinhua {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 7rem;
+    right: 7rem;
+}
+
+.diy-img img.xiubiao {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 3rem;
+    right: 11rem;
+}
+
+.diy-img img.yibiao {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+}
+
+.diy-img img.cixiu {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 9rem;
+    right: 9rem;
 }

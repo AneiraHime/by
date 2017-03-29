@@ -36,6 +36,167 @@ window.tData = {
         authorAvatar: './images/user/mahuateng.jpg',
         title: '好好补兵',
         src: './images/show1.jpg'
+    }],
+    // diy1
+    sizeList: [{
+        text: 'S',
+        model: '165/88A',
+        shoulderWidth: 44,
+        bust: 100,
+        length: 66
+    }, {
+        text: 'M',
+        model: '172/92A',
+        shoulderWidth: 45,
+        bust: 104,
+        length: 68
+    }, {
+        text: 'L',
+        model: '175/96A',
+        shoulderWidth: 46,
+        bust: 108,
+        length: 70
+    }, {
+        text: 'XL',
+        model: '180/100A',
+        shoulderWidth: 48,
+        bust: 112,
+        length: 72
+    }],
+    // diy1
+    typeList: [{
+        text: '口袋短袖',
+        imgSrc: './images/t-type/tshirt1.jpg'
+    }, {
+        text: '基本款短袖',
+        imgSrc: './images/t-type/tshirt2.jpg'
+    }, {
+        text: '前短后长短袖',
+        imgSrc: './images/t-type/tshirt3.jpg'
+    }],
+    // diy1
+    colorList: [{
+        text: '黑色',
+        color: '#000000',
+        imgSrc: './images/t-color/blackt.jpg'
+    }, {
+        text: '天蓝色',
+        color: '#C4DDFC',
+        imgSrc: './images/t-color/bluet.jpg'
+    }, {
+        text: '灰色',
+        color: '#CBCBCB',
+        imgSrc: './images/t-color/grayt.jpg'
+    }, {
+        text: '绿色',
+        color: '#D1FDDC',
+        imgSrc: './images/t-color/greent.jpg'
+    }, {
+        text: '骚粉色',
+        color: '#FFD9C6',
+        imgSrc: './images/t-color/orenget.jpg'
+    }, {
+        text: '粉红色',
+        color: '#FDBACC',
+        imgSrc: './images/t-color/pinkt.jpg'
+    }, {
+        text: '黄色',
+        color: '#FBFEC5',
+        imgSrc: './images/t-color/yellow.jpg'
+    }],
+    // diy2
+    yinhuaObj: {
+        default: [{
+            id: '0',
+            imgSrc: './images/yinhua/yh1.jpg'
+        }, {
+            id: '1',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }, {
+            id: '2',
+            imgSrc: './images/yinhua/yh3.jpg'
+        }, {
+            id: '3',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }],
+        hot: [{
+            id: '0',
+            imgSrc: './images/yinhua/yh3.jpg'
+        }, {
+            id: '1',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }, {
+            id: '2',
+            imgSrc: './images/yinhua/yh1.jpg'
+        }, {
+            id: '3',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }],
+        a: [{
+            id: '0',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }, {
+            id: '1',
+            imgSrc: './images/yinhua/yh1.jpg'
+        }, {
+            id: '2',
+            imgSrc: './images/yinhua/yh3.jpg'
+        }, {
+            id: '3',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }],
+        more: [{
+            id: '0',
+            imgSrc: './images/yinhua/yh1.jpg'
+        }, {
+            id: '1',
+            imgSrc: './images/yinhua/yh3.jpg'
+        }, {
+            id: '2',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }, {
+            id: '3',
+            imgSrc: './images/yinhua/yh2.jpg'
+        }]
+    },
+    // diy2
+    xiubiaoList: [{
+        id: '0',
+        imgSrc: './images/yinhua/yh1.jpg'
+    }, {
+        id: '1',
+        imgSrc: './images/yinhua/yh2.jpg'
+    }, {
+        id: '2',
+        imgSrc: './images/yinhua/yh3.jpg'
+    }],
+    // diy2
+    yibiaoList: [{
+        id: '0',
+        imgSrc: './images/yinhua/yh1.jpg'
+    }, {
+        id: '1',
+        imgSrc: './images/yinhua/yh2.jpg'
+    }, {
+        id: '2',
+        imgSrc: './images/yinhua/yh3.jpg'
+    }, {
+        id: '3',
+        imgSrc: './images/yinhua/yh2.jpg'
+    }],
+    // diy2
+    cixiuList: [{
+        id: '0',
+        imgSrc: './images/yinhua/yh1.jpg'
+    }, {
+        id: '1',
+        imgSrc: './images/yinhua/yh2.jpg'
+    }, {
+        id: '2',
+        imgSrc: './images/yinhua/yh3.jpg'
+    }, {
+        id: '3',
+        imgSrc: './images/yinhua/yh2.jpg'
     }]
 }
 
@@ -50,3 +211,13 @@ Vue.component('by-header', {
     },
     template: ('<div class="header"><img src="./images/menus.png" alt=""> BY !</div>')
 });
+
+
+window.getUrlParam = function(param) {
+    var reg = new RegExp("(^|&)" + param + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+};
