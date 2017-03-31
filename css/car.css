@@ -3,8 +3,9 @@
 .footerBloackBtn {
     width: 100%;
     height: 2rem;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    margin-top: .8rem;
     overflow: hidden;
     /*border: 1px solid red;*/
 }
@@ -19,7 +20,7 @@
 
 .diy-img {
     width: 100%;
-    height: 58%;
+    /*height: 58%;*/
     text-align: center;
     vertical-align: middle;
     position: relative;
@@ -97,3 +98,18 @@
     text-align: center;
     border: 1px solid #999;
 }
+
+.car-body table tr td img {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+.car-body table tr td .t-color-button {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 0 auto;
+}
+

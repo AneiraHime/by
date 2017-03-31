@@ -12,16 +12,17 @@
 
 <body>
     <div class="diy-img">
-        <p>{{submitData.size}}</p>
-        <img :src="submitData.imgSrc" alt="">
+        <p>{{tData.sizeList[submitData.size].text}}</p>
+        <!-- 这里应该是显示最后颜色时选的款型 + 颜色 -->
+        <img :src="tData.colorList[this.submitData.color].imgSrc" alt="">
         <!-- 印花 -->
-        <img class="yinhua" v-show="submitData.yinhua" :src="yinhuaObj[show.yinhuaType][submitData.yinhua.id].imgSrc" alt="">
+        <img class="yinhua" v-show="submitData.yinhua" :src="submitData.yinhua.imgSrc" alt="">
         <!-- 袖标 -->
-        <img class="xiubiao" v-show="submitData.xiubiao" :src="xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
+        <img class="xiubiao" v-show="submitData.xiubiao" :src="tData.xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
         <!-- 衣标 -->
-        <img class="yibiao" v-show="submitData.yibiao" :src="yibiaoList[submitData.yibiao.id].imgSrc" alt="">
+        <img class="yibiao" v-show="submitData.yibiao" :src="tData.yibiaoList[submitData.yibiao.id].imgSrc" alt="">
         <!-- 刺绣 -->
-        <img class="cixiu" v-show="submitData.cixiu" :src="cixiuList[submitData.cixiu.id].imgSrc" alt="">
+        <img class="cixiu" v-show="submitData.cixiu" :src="tData.cixiuList[submitData.cixiu.id].imgSrc" alt="">
     </div>
     <div class="diy-select">
         <div class="diy-select-top">
@@ -37,7 +38,7 @@
             </div>
             <div class="diy-select-body-right">
                 <ul class="diy-select-body-right-body">
-                    <li v-for="item in yinhuaObj[show.yinhuaType]" @click="showPic(item, 'yinhua')">
+                    <li v-for="item in tData.yinhuaObj[show.yinhuaType]" @click="showYinhuaPic(item)">
                         <img :src="item.imgSrc" alt="">
                     </li>
                 </ul>
@@ -52,7 +53,7 @@
         <!-- 袖标 -->
         <div class="diy-select-body" v-show="show.selectBody == 'xiubiao'">
             <ul>
-                <li v-for="item in xiubiaoList" @click="showPic(item, 'xiubiao')">
+                <li v-for="item in tData.xiubiaoList" @click="showPic(item, 'xiubiao')">
                     <img :src="item.imgSrc" alt="">
                     <p>{{ item.text }}</p>
                 </li>
@@ -61,7 +62,7 @@
         <!-- 衣标 -->
         <div class="diy-select-body" v-show="show.selectBody == 'yibiao'">
             <ul>
-                <li v-for="item in yibiaoList" @click="showPic(item, 'yibiao')">
+                <li v-for="item in tData.yibiaoList" @click="showPic(item, 'yibiao')">
                     <img :src="item.imgSrc" alt="">
                     <p>{{ item.text }}</p>
                 </li>
@@ -70,7 +71,7 @@
         <!-- 刺绣 -->
         <div class="diy-select-body" v-show="show.selectBody == 'cixiu'">
             <ul>
-                <li v-for="item in cixiuList" @click="showPic(item, 'cixiu')">
+                <li v-for="item in tData.cixiuList" @click="showPic(item, 'cixiu')">
                     <img :src="item.imgSrc" alt="">
                     <p>{{ item.text }}</p>
                 </li>

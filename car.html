@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>购物车</title>
+    <title>定制详情清单</title>
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./plug/need/layer.css" />
@@ -12,28 +12,66 @@
 
 <body>
     <div class="diy-img">
-        <p>{{submitData.size}}</p>
-        <img :src="submitData.imgSrc" alt="">
+        <p>{{tData.sizeList[submitData.size].text}}</p>
+        <!-- 这里应该是显示最后颜色时选的款型 + 颜色 -->
+        <img :src="tData.colorList[this.submitData.color].imgSrc" alt="">
         <!-- 印花 -->
-        <img class="yinhua" v-show="submitData.yinhua" :src="yinhuaObj[show.yinhuaType][submitData.yinhua.id].imgSrc" alt="">
+        <img class="yinhua" v-show="submitData.yinhua" :src="tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].imgSrc" alt="">
         <!-- 袖标 -->
-        <img class="xiubiao" v-show="submitData.xiubiao" :src="xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
+        <img class="xiubiao" v-show="submitData.xiubiao" :src="tData.xiubiaoList[submitData.xiubiao].imgSrc" alt="">
         <!-- 衣标 -->
-        <img class="yibiao" v-show="submitData.yibiao" :src="yibiaoList[submitData.yibiao.id].imgSrc" alt="">
+        <img class="yibiao" v-show="submitData.yibiao" :src="tData.yibiaoList[submitData.yibiao].imgSrc" alt="">
         <!-- 刺绣 -->
-        <img class="cixiu" v-show="submitData.cixiu" :src="cixiuList[submitData.cixiu.id].imgSrc" alt="">
+        <img class="cixiu" v-show="submitData.cixiu" :src="tData.cixiuList[submitData.cixiu].imgSrc" alt="">
     </div>
     <div class="car-body">
         <table>
             <tr>
-                <td>图示</td>
+                <td>清单</td>
                 <td>名称</td>
                 <td>价格</td>
             </tr>
+            <!-- 大小 -->
             <tr>
-                <td><img src="" alt=""></td>
-                <td>逗比款式</td>
-                <td>￥233.00</td>
+                <td>{{tData.sizeList[submitData.size].model}}</td>
+                <td>{{tData.sizeList[submitData.size].text}}</td>
+                <td>{{tData.sizeList[submitData.size].price}}</td>
+            </tr>
+            <!-- 版型 -->
+            <tr>
+                <td><img :src="tData.typeList[submitData.type].imgSrc" alt=""></td>
+                <td>{{tData.typeList[submitData.type].text}}</td>
+                <td>{{tData.typeList[submitData.type].price}}</td>
+            </tr>
+            <!-- 颜色 -->
+            <tr>
+                <td><div class="t-color-button" style="background-color: {{tData.colorList[submitData.color].color}}"></div></td>
+                <td>{{tData.colorList[submitData.color].text}}</td>
+                <td>{{tData.colorList[submitData.color].price}}</td>
+            </tr>
+            <!-- 印花 -->
+            <tr>
+                <td><img :src="tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].imgSrc" alt=""></td>
+                <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].text}}</td>
+                <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].price}}</td>
+            </tr>
+            <!-- 袖标 -->
+            <tr>
+                <td><img :src="tData.xiubiaoList[submitData.xiubiao].imgSrc" alt=""></td>
+                <td>{{tData.xiubiaoList[submitData.xiubiao].text}}</td>
+                <td>{{tData.xiubiaoList[submitData.xiubiao].price}}</td>
+            </tr>
+            <!-- 衣标 -->
+            <tr>
+                <td><img :src="tData.yibiaoList[submitData.yibiao].imgSrc" alt=""></td>
+                <td>{{tData.yibiaoList[submitData.yibiao].text}}</td>
+                <td>{{tData.yibiaoList[submitData.yibiao].price}}</td>
+            </tr>
+            <!-- 刺绣 -->
+            <tr>
+                <td><img :src="tData.cixiuList[submitData.cixiu].imgSrc" alt=""></td>
+                <td>{{tData.cixiuList[submitData.cixiu].text}}</td>
+                <td>{{tData.cixiuList[submitData.cixiu].price}}</td>
             </tr>
         </table>
     </div>

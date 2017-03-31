@@ -2,82 +2,66 @@ var VM = new Vue({
     el: "body",
     data: {
         show: {
-            selectBody: './images/t-type/tshirt3.jpg',
-            yinhuaType: 'default' // 印花当前显示的犀利
         },
         submitData: {
-            imgSrc: '',
-            size: '',
-            type: '',
-            color: '',
-            yinhua: '', // 最后赋值是对象
-            xiubiao: '', // 最后赋值是对象
-            yibiao: '', // 最后赋值是对象
-            cixiu: '' // 最后赋值是对象
+            size: '', // id
+            type: '', // id
+            color: '', // id
+            yinhuaType: '', // name
+            yinhua: '', // id
+            xiubiao: '', // id
+            yibiao: '', // id
+            cixiu: '' // id
         },
-        menus: [{
-            text: '印花',
-            id: 'yinhua'
-        }, {
-            text: '袖标',
-            id: 'xiubiao'
-        }, {
-            text: '衣标',
-            id: 'yibiao'
-        }, {
-            text: '刺绣',
-            id: 'cixiu'
-        }],
-        yinhuaObj: window.tData.yinhuaObj,
-        xiubiaoList: window.tData.xiubiaoList,
-        yibiaoList: window.tData.yibiaoList,
-        cixiuList: window.tData.cixiuList
+        tData: window.tData
     },
     computed: {
 
     },
     ready: function() {
-        var imgSrc = getUrlParam('imgSrc') || './images/t-type/tshirt3.jpg';
-        this.submitData.imgSrc = imgSrc;
-
-        var size = getUrlParam('size') || '';
+        var size = getUrlParam('size');
         this.submitData.size = size;
 
-        var type = getUrlParam('type') || '';
+        var type = getUrlParam('type');
         this.submitData.type = type;
 
-        var color = getUrlParam('color') || '';
+        var color = getUrlParam('color');
         this.submitData.color = color;
 
-        this.show.selectBody = 'yinhua';
+        var yinhuaType = getUrlParam('yinhuaType');
+        this.submitData.yinhuaType = yinhuaType;
+
+        var yinhua = getUrlParam('yinhua');
+        this.submitData.yinhua = yinhua;
+
+        var xiubiao = getUrlParam('xiubiao');
+        this.submitData.xiubiao = xiubiao;
+
+        var yibiao = getUrlParam('yibiao');
+        this.submitData.yibiao = yibiao;
+
+        var cixiu = getUrlParam('cixiu');
+        this.submitData.cixiu = cixiu;
+
     },
     methods: {
-        showPic: function(item, name) {
-            this.submitData[name] = item;
-        },
-        selectMenu: function(item) {
-            this.show.selectBody = item.id;
-        },
-        yinhuaTap: function(name) {
-            this.show.yinhuaType = name;
-        },
-        addYourImg: function() {
-            layer.open({
-                type: 2,
-                content: '加载中',
-                time: 2
-            });
-
-            setTimeout(function() {
-                layer.open({
-                    content: '因阿里云服务器故障，请稍候再试',
-                    skin: 'msg',
-                    time: 2
-                });
-            }, 2000);
-        },
         submit: function() {
             console.log(this.submitData);
+
+            var submitData = this.submitData,
+                size = submitData.size,
+                type = submitData.type,
+                color = submitData.color,
+                yinhuaType = submitData.yinhuaType,
+                yinhua = submitData.yinhua,
+                xiubiao = submitData.xiubiao,
+                yibiao = submitData.yibiao,
+                cixiu = submitData.cixiu;
+
+            var reUrl = './detail.html?size=' + size + '&type=' + type + '&color=' + color + '&yinhua=' + yinhua + '&xiubiao=' + xiubiao + '&yibiao=' + yibiao + '&cixiu=' + cixiu;
+
+            location.href = reUrl;
+
         }
     }
 });

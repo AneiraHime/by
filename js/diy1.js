@@ -2,13 +2,13 @@ var VM = new Vue({
     el: "body",
     data: {
         show: {
-            selectBody: ''
+            selectBody: '',
+            imgSrc: ''
         },
         submitData: {
-            imgSrc: '',
-            size: '',
-            type: '',
-            color: ''
+            size: '', // id
+            type: '', // id
+            color: '' // id
         },
         menus: [{
             text: '尺码',
@@ -28,16 +28,17 @@ var VM = new Vue({
 
     },
     ready: function() {
-        this.submitData.imgSrc = this.typeList[0].imgSrc;
+        this.show.imgSrc = this.typeList[0].imgSrc;
         this.show.selectBody = 'size';
     },
     methods: {
         showThis: function(item) {
             if (item.imgSrc) {
-                this.submitData.imgSrc = item.imgSrc;
+                this.show.imgSrc = item.imgSrc;
             }
 
-            this.submitData[this.show.selectBody] = item.text;
+            // 页面间通过id来传值
+            this.submitData[this.show.selectBody] = item.id;
         },
         selectMenu: function(item) {
             this.show.selectBody = item.id;
@@ -45,27 +46,33 @@ var VM = new Vue({
         submit: function() {
             console.log(this.submitData);
 
-            var reUrl = './diy2.html';
+            var errMsg = '',
+                size = this.submitData.size,
+                type = this.submitData.type,
+                color = this.submitData.color;
 
-            var imgSrc = this.submitData.imgSrc;
-            if (imgSrc && imgSrc != '') {
-                reUrl += '?imgSrc=' + imgSrc;
+            if (color.toString().length == 0) {
+                errMsg = '请选择颜色';
             }
 
-            var size = this.submitData.size;
-            if (size && size != '') {
-                reUrl += '&size=' + size;
+            if (type.toString().length == 0) {
+                errMsg = '请选择版型';
             }
 
-            var type = this.submitData.type;
-            if (type && type != '') {
-                reUrl += '&type=' + type;
+            if (size.toString().length == 0) {
+                errMsg = '请选择尺码';
             }
 
-            var color = this.submitData.color;
-            if (color && color != '') {
-                reUrl += '&color=' + color;
+            if (errMsg != '') {
+                layer.open({
+                    content: errMsg,
+                    skin: 'msg',
+                    time: 1.5
+                });
+                return;
             }
+
+            var reUrl = './diy2.html?size=' + size + '&type=' + type + '&color=' + color;
 
             location.href = reUrl;
         }
