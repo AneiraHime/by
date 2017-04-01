@@ -50,25 +50,25 @@
                 <td>{{tData.colorList[submitData.color].price}}</td>
             </tr>
             <!-- 印花 -->
-            <tr>
+            <tr v-show="submitData.yinhua">
                 <td><img :src="tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].imgSrc" alt=""></td>
                 <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].text}}</td>
                 <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].price}}</td>
             </tr>
             <!-- 袖标 -->
-            <tr>
+            <tr v-show="submitData.xiubiao">
                 <td><img :src="tData.xiubiaoList[submitData.xiubiao].imgSrc" alt=""></td>
                 <td>{{tData.xiubiaoList[submitData.xiubiao].text}}</td>
                 <td>{{tData.xiubiaoList[submitData.xiubiao].price}}</td>
             </tr>
             <!-- 衣标 -->
-            <tr>
+            <tr v-show="submitData.yibiao">
                 <td><img :src="tData.yibiaoList[submitData.yibiao].imgSrc" alt=""></td>
                 <td>{{tData.yibiaoList[submitData.yibiao].text}}</td>
                 <td>{{tData.yibiaoList[submitData.yibiao].price}}</td>
             </tr>
             <!-- 刺绣 -->
-            <tr>
+            <tr v-show="submitData.cixiu">
                 <td><img :src="tData.cixiuList[submitData.cixiu].imgSrc" alt=""></td>
                 <td>{{tData.cixiuList[submitData.cixiu].text}}</td>
                 <td>{{tData.cixiuList[submitData.cixiu].price}}</td>

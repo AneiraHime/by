@@ -76,43 +76,6 @@
 
 
 
-/*.car-body ul{
-    width: 100%;
-    text-align: center;
-}
-
-.car-body ul li {
-    width: 100%;
-}
-
-.car-body span{
-    width: 30%;
-}*/
-
-.car-body table {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.car-body table tr td {
-    text-align: center;
-    border: 1px solid #999;
-}
-
-.car-body table tr td img {
-    width: 2rem;
-    height: 2rem;
-    vertical-align: middle;
-}
-
-.car-body table tr td .t-color-button {
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 50%;
-    background-color: #000;
-    margin: 0 auto;
-}
-
 
 
 .detail-header {
@@ -120,6 +83,8 @@
     height: 10rem;
     position: relative;
     background-color: yellow;
+    background-image: url("../images/user-bg.jpg");
+    background-size: 100%;
 }
 
 

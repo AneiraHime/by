@@ -58,7 +58,27 @@ var VM = new Vue({
                 yibiao = submitData.yibiao,
                 cixiu = submitData.cixiu;
 
-            var reUrl = './detail.html?size=' + size + '&type=' + type + '&color=' + color + '&yinhua=' + yinhua + '&xiubiao=' + xiubiao + '&yibiao=' + yibiao + '&cixiu=' + cixiu;
+            var reUrl = './detail.html?size=' + size + '&type=' + type + '&color=' + color;
+
+            if (yinhuaType != null) {
+                reUrl += '&yinhuaType=' + yinhuaType;
+            }
+
+            if (yinhua != null && yinhua != 0) {
+                reUrl += '&yinhua=' + yinhua;
+            }
+
+            if (xiubiao != null && xiubiao != 0) {
+                reUrl += '&xiubiao=' + xiubiao;
+            }
+
+            if (yibiao != null && yibiao != 0) {
+                reUrl += '&yibiao=' + yibiao;
+            }
+
+            if (cixiu != null && cixiu != 0) {
+                reUrl += '&cixiu=' + cixiu;
+            }
 
             location.href = reUrl;
 

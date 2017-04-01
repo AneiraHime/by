@@ -16,13 +16,13 @@
         <!-- 这里应该是显示最后颜色时选的款型 + 颜色 -->
         <img :src="tData.colorList[this.submitData.color].imgSrc" alt="">
         <!-- 印花 -->
-        <img class="yinhua" v-show="submitData.yinhua" :src="submitData.yinhua.imgSrc" alt="">
+        <img class="yinhua" v-show="submitData.yinhua && submitData.yinhua.id != 0" :src="submitData.yinhua.imgSrc" alt="">
         <!-- 袖标 -->
-        <img class="xiubiao" v-show="submitData.xiubiao" :src="tData.xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
+        <img class="xiubiao" v-show="submitData.xiubiao && submitData.xiubiao.id != 0" :src="tData.xiubiaoList[submitData.xiubiao.id].imgSrc" alt="">
         <!-- 衣标 -->
-        <img class="yibiao" v-show="submitData.yibiao" :src="tData.yibiaoList[submitData.yibiao.id].imgSrc" alt="">
+        <img class="yibiao" v-show="submitData.yibiao && submitData.yibiao.id != 0" :src="tData.yibiaoList[submitData.yibiao.id].imgSrc" alt="">
         <!-- 刺绣 -->
-        <img class="cixiu" v-show="submitData.cixiu" :src="tData.cixiuList[submitData.cixiu.id].imgSrc" alt="">
+        <img class="cixiu" v-show="submitData.cixiu && submitData.cixiu.id != 0" :src="tData.cixiuList[submitData.cixiu.id].imgSrc" alt="">
     </div>
     <div class="diy-select">
         <div class="diy-select-top">

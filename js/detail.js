@@ -45,23 +45,8 @@ var VM = new Vue({
 
     },
     methods: {
-        submit: function() {
-            console.log(this.submitData);
-
-            var submitData = this.submitData,
-                size = submitData.size,
-                type = submitData.type,
-                color = submitData.color,
-                yinhuaType = submitData.yinhuaType,
-                yinhua = submitData.yinhua,
-                xiubiao = submitData.xiubiao,
-                yibiao = submitData.yibiao,
-                cixiu = submitData.cixiu;
-
-            var reUrl = './detail.html?size=' + size + '&type=' + type + '&color=' + color + '&yinhua=' + yinhua + '&xiubiao=' + xiubiao + '&yibiao=' + yibiao + '&cixiu=' + cixiu;
-
-            location.href = reUrl;
-
+        goHome: function() {
+            location.href = './home.html'
         }
     }
 });

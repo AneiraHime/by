@@ -12,8 +12,8 @@
 
 <body>
     <div class="detail-header">
-        <p>Tiffany</p>
-        <img src="./images/user/edc.jpg" alt="">
+        <p>{{ tData.imageList[1].author }}</p>
+        <img :src="tData.imageList[1].authorAvatar" alt="">
     </div>
     <div class="diy-img">
         <p>{{tData.sizeList[submitData.size].text}}</p>
@@ -28,59 +28,12 @@
         <!-- 刺绣 -->
         <img class="cixiu" v-show="submitData.cixiu" :src="tData.cixiuList[submitData.cixiu].imgSrc" alt="">
     </div>
-    <div class="car-body">
-        <table>
-            <tr>
-                <td>清单</td>
-                <td>名称</td>
-                <td>价格</td>
-            </tr>
-            <!-- 大小 -->
-            <tr>
-                <td>{{tData.sizeList[submitData.size].model}}</td>
-                <td>{{tData.sizeList[submitData.size].text}}</td>
-                <td>{{tData.sizeList[submitData.size].price}}</td>
-            </tr>
-            <!-- 版型 -->
-            <tr>
-                <td><img :src="tData.typeList[submitData.type].imgSrc" alt=""></td>
-                <td>{{tData.typeList[submitData.type].text}}</td>
-                <td>{{tData.typeList[submitData.type].price}}</td>
-            </tr>
-            <!-- 颜色 -->
-            <tr>
-                <td><div class="t-color-button" style="background-color: {{tData.colorList[submitData.color].color}}"></div></td>
-                <td>{{tData.colorList[submitData.color].text}}</td>
-                <td>{{tData.colorList[submitData.color].price}}</td>
-            </tr>
-            <!-- 印花 -->
-            <tr>
-                <td><img :src="tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].imgSrc" alt=""></td>
-                <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].text}}</td>
-                <td>{{tData.yinhuaObj[submitData.yinhuaType][submitData.yinhua].price}}</td>
-            </tr>
-            <!-- 袖标 -->
-            <tr>
-                <td><img :src="tData.xiubiaoList[submitData.xiubiao].imgSrc" alt=""></td>
-                <td>{{tData.xiubiaoList[submitData.xiubiao].text}}</td>
-                <td>{{tData.xiubiaoList[submitData.xiubiao].price}}</td>
-            </tr>
-            <!-- 衣标 -->
-            <tr>
-                <td><img :src="tData.yibiaoList[submitData.yibiao].imgSrc" alt=""></td>
-                <td>{{tData.yibiaoList[submitData.yibiao].text}}</td>
-                <td>{{tData.yibiaoList[submitData.yibiao].price}}</td>
-            </tr>
-            <!-- 刺绣 -->
-            <tr>
-                <td><img :src="tData.cixiuList[submitData.cixiu].imgSrc" alt=""></td>
-                <td>{{tData.cixiuList[submitData.cixiu].text}}</td>
-                <td>{{tData.cixiuList[submitData.cixiu].price}}</td>
-            </tr>
-        </table>
-    </div>
-    <div class="footerBloackBtn" @click="submit">
-        <button>分享</button>
+    <dvi class="detail-body">
+        <span>进度：</span>
+        <span>50% 制作中</span>
+    </dvi>
+    <div class="footerBloackBtn" @click="goHome">
+        <button>返回首页</button>
     </div>
     <script src="./plug/vue.min.js"></script>
     <script src="./js/main.js"></script>

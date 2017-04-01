@@ -97,19 +97,19 @@ var VM = new Vue({
                 reUrl += '&yinhuaType=' + yinhuaType;
             }
 
-            if (yinhua != null) {
+            if (yinhua != null && yinhua != 0) {
                 reUrl += '&yinhua=' + yinhua;
             }
 
-            if (xiubiao != null) {
+            if (xiubiao != null && xiubiao != 0) {
                 reUrl += '&xiubiao=' + xiubiao;
             }
 
-            if (yibiao != null) {
+            if (yibiao != null && yibiao != 0) {
                 reUrl += '&yibiao=' + yibiao;
             }
 
-            if (cixiu != null) {
+            if (cixiu != null && cixiu != 0) {
                 reUrl += '&cixiu=' + cixiu;
             }
 
